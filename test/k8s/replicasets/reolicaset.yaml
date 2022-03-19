@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: myapp-replicaSet
+  labels:
+    name: myapp
+spec:
+  selector:
+    matchLabels:
+      app: myapp
+    replicaset: 3
+    template:
+      metadata:
+        name: second-ginx
+        labels:
+          # it should be change
+          #env: production
+          app: myapp
+      spec:
+        containers:
+          - name: nginx
+            image: nginx
+            # - name: busybox
+            #   image: busybox

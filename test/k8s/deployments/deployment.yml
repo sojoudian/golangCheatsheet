@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: myapp-deployment
+  labels:
+    tier: frontend
+    app: nginx
+spec:
+  selector:
+    matchLabels:
+      app: myapp
+  replicas: 6
+  template:
+    metadata:
+      name: second-ginx
+      labels:
+        # it should be change
+        #env: production
+        app: myapp
+    spec:
+      containers:
+        - name: nginx
+          image: nginx
+          # - name: busybox
