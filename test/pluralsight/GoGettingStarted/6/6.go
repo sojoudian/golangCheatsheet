@@ -11,6 +11,8 @@ func main() {
 	s3 := slice[:2]
 	s4 := slice[1:2]
 
-	fmt.Println(s2, s3, s4)
+	fmt.Println("###########\n", s2)
+	fmt.Println(s3)
+	fmt.Println(s4)
 
 }
